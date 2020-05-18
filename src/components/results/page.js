@@ -1,5 +1,12 @@
 import React, { Fragment } from "react";
+import AppBar from "../appBar";
+import { CssBaseline } from "@material-ui/core";
 
-const Page = (props) => <Fragment>Results</Fragment>;
+const Page = (props) => (
+  <Fragment>
+    <CssBaseline />
+    <AppBar />
+  </Fragment>
+);
 
 export default Page;
