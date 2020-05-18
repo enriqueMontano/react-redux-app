@@ -5,14 +5,16 @@ import Autocomplete from "../autocomplete";
 import "./style.css";
 
 function Page(props) {
+  const { text, suggestions, onChangeText, onChangeSelections } = props;
+
   return (
     <AppBar position="static">
       <Toolbar className="appbar">
         <Autocomplete
-          text={""}
-          suggestions={[]}
-          onChangeText={(text) => {}}
-          onChangeSelections={(text) => {}}
+          text={text}
+          suggestions={suggestions}
+          onChangeText={onChangeText}
+          onChangeSelections={onChangeSelections}
         />
       </Toolbar>
     </AppBar>
