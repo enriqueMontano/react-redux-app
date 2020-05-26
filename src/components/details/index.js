@@ -12,14 +12,7 @@ class Details extends Component {
   }
 
   componentDidMount() {
-    const {
-      match: {
-        params: { itemId },
-      },
-      findCurrentItem,
-    } = this.props;
-
-    findCurrentItem(itemId);
+    this.props.findCurrentItem(parseInt(this.props.match.params.id));
   }
 
   goTo(path) {
