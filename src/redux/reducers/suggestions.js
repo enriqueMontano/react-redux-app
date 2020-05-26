@@ -1,6 +1,5 @@
 import { type as findSuggestionsType } from "../actions/findSuggestions";
 import items from "../../data/items.js";
-
 const defaultState = [];
 
 const reducer = (state = defaultState, { type, payload }) => {

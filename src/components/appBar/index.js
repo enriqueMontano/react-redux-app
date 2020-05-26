@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Page from "./page";
 import findSuggestions from "../../redux/actions/findSuggestions";
+import findResults from "../../redux/actions/findResults";
 
 class AppBar extends Component {
   constructor(props) {
@@ -9,14 +10,19 @@ class AppBar extends Component {
     this.state = {
       text: "",
     };
+
+    this.onChangeText = this.onChangeText.bind(this);
+    this.onChangeSelection = this.onChangeSelection.bind(this);
   }
-  onChangeText = (text) => {
+  onChangeText(text) {
     this.setState({ text });
-
     this.props.findSuggestions(text);
-  };
+  }
 
-  onChangeSelection = (text) => {};
+  onChangeSelection(text) {
+    this.setState({ text });
+    this.props.findResults(text);
+  }
 
   render() {
     const { text } = this.state;
@@ -40,6 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   findSuggestions,
+  findResults,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppBar);

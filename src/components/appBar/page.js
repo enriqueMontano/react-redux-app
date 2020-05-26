@@ -5,7 +5,7 @@ import Autocomplete from "../autocomplete";
 import "./style.css";
 
 function Page(props) {
-  const { text, suggestions, onChangeText, onChangeSelections } = props;
+  const { text, suggestions, onChangeText, onChangeSelection } = props;
 
   return (
     <AppBar position="static">
@@ -14,7 +14,7 @@ function Page(props) {
           text={text}
           suggestions={suggestions}
           onChangeText={onChangeText}
-          onChangeSelections={onChangeSelections}
+          onChangeSelection={onChangeSelection}
         />
       </Toolbar>
     </AppBar>
