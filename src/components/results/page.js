@@ -9,7 +9,7 @@ import AppBar from "../appBar";
 import "./style.css";
 
 const Page = (props) => {
-  const { results } = props;
+  const { results, goTo } = props;
   const isEmpty = results.length === 0;
 
   return (
@@ -24,7 +24,7 @@ const Page = (props) => {
         ) : (
           results.map((cv) => (
             <div key={cv.id} className="card-container">
-              <Card className="card">
+              <Card className="card" onClick={() => goTo(`/details/${cv.id}`)}>
                 <CardActionArea>
                   <CardMedia
                     className="card-media"
